@@ -409,6 +409,12 @@ ul.sns-list li a.fantia:hover {
   color: #ffffff;
 }
 
+ul.sns-list li a.blog:hover {
+  background: #FF5600;
+  border: 2px solid #FF5600;
+  color: #ffffff;
+}
+
 ul.sns-list li:not(:last-of-type) {
   margin-right: 20px;
 }
