@@ -10,7 +10,7 @@
   ========================================== */
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
 input[type="submit"] {
-  -webkit-appearance: none;
+  appearance: none;
   border-radius: 0;
 }
 
