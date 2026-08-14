@@ -26,195 +26,256 @@
 
 <body>
 
+  <!-- ==== スクロール追従ヘッダー＋ハンバーガーメニュー ==== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header-inner">
+      <button class="site-logo" data-target="intro" type="button">棗志希 プロフィール</button>
+
+      <button class="hamburger" id="hamburgerBtn" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="slide-menu" id="slideMenu" aria-hidden="true">
+    <ul>
+      <li><button data-target="hobbies" type="button">趣味趣向について</button></li>
+      <li><button data-target="habitat" type="button">生息場所</button></li>
+      <li><button data-target="avatars" type="button">アバターまとめ</button></li>
+      <li><button data-target="caution" type="button">注意事項</button></li>
+    </ul>
+  </nav>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <!-- ==== ヘッダーここまで ==== -->
+
   <main>
     <div class="container">
 
-          <div class="header">
+      <!-- ==== 初期ページ：ヘッダー画像〜リンク集 ==== -->
+      <section class="page-section active" id="page-intro">
 
-            <img src="img/icon.png" alt="アイコン" class="icon">
+        <div class="header">
+          <img src="img/icon.png" alt="アイコン" class="icon">
+        </div>
 
-          </div>
+        <h1 class="center">棗 志希</h1>
+        <p class="update">最終更新　2023.10.12</p>
+        <p class="center">なつめ、しきと読みます。<br>
+          a.k.a 7thNote.<br>
+          アニメとゲーム、漫画や音楽が好き。<br>
+          嗜好はビターとKawaii。<br>
+          普段はTwitter(X)とVRCに生息しています。<br>
+          のそのそ……。</p>
 
-          <h1 class="center">棗 志希</h1>
-          <p class="update">最終更新　2023.10.12</p>
-          <p class="center">なつめ、しきと読みます。<br>
-            a.k.a 7thNote.<br>
-            アニメとゲーム、漫画や音楽が好き。<br>
-            嗜好はビターとKawaii。<br>
-            普段はTwitter(X)とVRCに生息しています。<br>
-            のそのそ……。</p>
+        <ul class="sns-list center">
+          <li><a href="https://twitter.com/NATSUME_WAU" class="twitter" target="_blank">Twitter(X)</a></li>
+          <li><a href="https://vrchat.com/home/user/usr_575d3aa3-6ef4-4966-a58d-f76f35eaa443" class="VRChat" target="_blank">VRChat</a></li>
+          <li><a href="https://discord.com/users/720135068106096680" class="Discord" target="_blank">Discord</a></li>
+          <li><a href="https://steamcommunity.com/id/3t0kb/" class="steam" target="_blank">Steam</a></li>
+          <li><a href="https://marshmallow-qa.com/dobk6tzixgnfyom" class="marsh" target="_blank">マシュマロ</a></li>
+          <li><a href="https://virtualkemomimi.net/@Nemutai428" class="skeb" target="_blank">Misskey</a></li>
+          <li><a href="https://www.pixiv.net/users/7643381" class="pixiv" target="_blank">Pixiv</a></li>
+          <li><a href="https://www.amazon.jp/hz/wishlist/ls/40A46F1GJFN7?ref_=wl_share" class="amazon" target="_blank">Amazon</a></li>
+          <li><a href="https://s3t0kb.hateblo.jp/" class="blog" target="_blank">Blog</a></li>
+        </ul>
 
-            <ul class="sns-list center">
-              <li><a href="https://twitter.com/NATSUME_WAU" class="twitter" target="_blank">Twitter(X)</a></li>
-              <li><a href="https://vrchat.com/home/user/usr_575d3aa3-6ef4-4966-a58d-f76f35eaa443" class="VRChat" target="_blank">VRChat</a></li>
-              <li><a href="https://discord.com/users/720135068106096680" class="Discord" target="_blank">Discord</a></li>
-              <li><a href="https://steamcommunity.com/id/3t0kb/" class="steam" target="_blank">Steam</a></li>
-              <li><a href="https://marshmallow-qa.com/dobk6tzixgnfyom" class="marsh" target="_blank">マシュマロ</a></li>
-              <li><a href="https://virtualkemomimi.net/@Nemutai428" class="skeb" target="_blank">Misskey</a></li>
-              <li><a href="https://www.pixiv.net/users/7643381" class="pixiv" target="_blank">Pixiv</a></li>
-              <li><a href="https://www.amazon.jp/hz/wishlist/ls/40A46F1GJFN7?ref_=wl_share" class="amazon" target="_blank">Amazon</a></li>
-              <li><a href="https://s3t0kb.hateblo.jp/" class="blog" target="_blank">Blog</a></li>
-            </ul>
+        <p class="center intro-hint">メニュー（右上の≡）から、趣味趣向やアバターなどをご覧いただけます。</p>
 
-          <section class="two-column">
-            <div class="column">
-              <dl class="memo">
-                <dt>好きなもの</dt>
-                <dd><strong>TRPG</strong><br>
-                 最近一番はまってます。<br>
-                 クトゥルフ7版がメインですが、ソード・ワールドもたまにやります。<br>
-                 ただTRPGできる友人が少ないやら予定が合いづらいやらで、中々思うようにプレイできていません……。<br>
-                 PLメインですが少しづつKPの経験も積んできているので、お仲間募集中です。切実。<br>
-                 タイマンも大人数も短期も長期も謎解きも戦闘も好きです。RPは好きですが経験値が足りてない。もっとやりたい。</dd>
+      </section>
 
-                <dd><strong>NEEDY GIRL OVERDOSE</strong><br>
-                 <strong>多くに望まれる女の子を演じ続ける彼女と、それを支えようとした誰かの末路。</strong><br>
-                 あめちゃんという女の子を大人気配信者にしたりいちゃいちゃしたりするゲームです。Switch版、Steam版とあるので是非。<br>
-                 超てんちゃん、そして何より<strong>あめちゃんという存在が大好きです</strong>。</dd>
-                
-                <dd><strong>アニメ等オタク作品</strong><br>
-                 かなり雑多に観る方ですが、経歴的にはハルヒから入って10年代前半の有名所はほぼリアタイしていた感じでしょうか。ガンダムもきららもラノベ原作etc.好きです。<br>
-                 最近は原作から入ってアニメを楽しみにすることもありますが、多くはアニメで興味を持ちコンテンツの造詣を深めていくことが多いかも。<br>
-                 作品としては、Fateシリーズ、アイマスシリーズ、シュタゲ、青ブタ、無職転生、etc...</dd>
+      <!-- ==== 趣味趣向について：好み／苦手の2タブ、好みはアコーディオン ==== -->
+      <section class="page-section" id="page-hobbies">
+        <h2>趣味趣向について</h2>
 
-                <dd><strong>漫画</strong><br>
-                 絵が可愛いのが好き。儚い雰囲気があるとなお好き。ジャンプラを中心に読み漁っています。<br>
-                 特に好きなのはダンダダン、推しの子、ココロのプログラム。特に最後のは掲載誌間違えてるんじゃないかと思うほど心理描写が緻密なラブコメです。おすすめ。</dd>
+        <div class="profile-tabs">
+          <nav class="tab-nav">
+            <button class="tab-btn active" data-target="tab-like">好み</button>
+            <button class="tab-btn" data-target="tab-dislike">苦手</button>
+          </nav>
 
-                <dd><strong>音楽</strong><br>
-                 こちらも雑多にはなりますが、濃いのは失恋ソングと邦ロック、ボカロですかね。Indigo la End、裏芽、澤田空海理あたりはおそらく毎日耳にしています。<br>
-                 あとはSpotifyのおすすめの曲で少しづつ聴くアーティストが広がってきています。</dd>
+          <div class="tab-content-wrap">
 
-                <dd><strong>機械</strong><br>
-                 雑な見出しで申し訳ないですが、PCスマホオーディオ等かなりハマっています。ポタオデに関してはCIEMを自作したことがあるといえば雰囲気掴んでいただけるでしょうか。<br>
-                 気が向けばブログなんかで持っているものについて雑記を書くのもいいかもしれないですね。</dd>
+            <!-- 好み：アコーディオン -->
+            <div class="tab-panel active" id="tab-like">
+              <div class="accordion">
 
-                <dd><strong>百合</strong><br>
-                 説明不要。</dd>
-                
+                <div class="acc-item open">
+                  <button class="acc-header">
+                    TRPG
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p>最近一番はまってます。<br>
+                      クトゥルフ7版がメインですが、ソード・ワールドもたまにやります。<br>
+                      ただTRPGできる友人が少ないやら予定が合いづらいやらで、中々思うようにプレイできていません……。<br>
+                      PLメインですが少しづつKPの経験も積んできているので、お仲間募集中です。切実。<br>
+                      タイマンも大人数も短期も長期も謎解きも戦闘も好きです。RPは好きですが経験値が足りてない。もっとやりたい。</p>
+                    </div>
+                  </div>
+                </div>
 
-                <dt>苦手なもの</dt>
-                <dd>ガチグロがだめです。リアルな虫とかそれ以上は無理……。当然TRPG中は頑張ります。</dd>
+                <div class="acc-item">
+                  <button class="acc-header">
+                    NEEDY GIRL OVERDOSE
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p><strong>多くに望まれる女の子を演じ続ける彼女と、それを支えようとした誰かの末路。</strong><br>
+                      あめちゃんという女の子を大人気配信者にしたりいちゃいちゃしたりするゲームです。Switch版、Steam版とあるので是非。<br>
+                      超てんちゃん、そして何より<strong>あめちゃんという存在が大好きです</strong>。</p>
+                    </div>
+                  </div>
+                </div>
 
-                <dt>注意事項</dt>
-                <dd>一応、重度の精神疾患持ちです。主に恐怖や怯えが強いというだけですが、そういう傾向があるということで……</dd>
-              </dl>
-            </div>
-            <div class="column">
-              <dl class="memo"></dl>
-              <h2>生息場所</h2>
-              <p>
-              Twitterなんかは長年やっているくせに運用方針も定まっておらずアホみたいに雑多、人間のようななにかがそのままそこに存在してます。ほんとはもちっと整理したい……すまない……
-              </p>
-              <p>VRCではフレプラを中心にkawaiiになるべく日々改変中。<br>
-              黒髪ボブが好きすぎて一年間続けていたんですが、最近ゆるふわカーブなベージュボブも使ってみています。短髪、ごちゃごちゃしすぎないシンプルなスタイル、リアルクローズ系とか好きです。<br>
-              おしゃべりするの好きなので、色々趣味など共有しましょう。
-              </p>
-              <p>
-              Misskeyは今のところそんなに使ってません。友人の鯖に垢置かせてもらってます。
-              </p>
-              
+                <div class="acc-item">
+                  <button class="acc-header">
+                    アニメ等オタク作品
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p>かなり雑多に観る方ですが、経歴的にはハルヒから入って10年代前半の有名所はほぼリアタイしていた感じでしょうか。ガンダムもきららもラノベ原作etc.好きです。<br>
+                      最近は原作から入ってアニメを楽しみにすることもありますが、多くはアニメで興味を持ちコンテンツの造詣を深めていくことが多いかも。<br>
+                      作品としては、Fateシリーズ、アイマスシリーズ、シュタゲ、青ブタ、無職転生、etc...</p>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="box">
-                下部にはVRCで普段使うアバターを順次軽くリストアップしておきます。全部わたしです。あと、たまにボイチェン使って入ります。VRCで知らない人来たと勘違いさせちゃったらごめんね
+                <div class="acc-item">
+                  <button class="acc-header">
+                    漫画
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p>絵が可愛いのが好き。儚い雰囲気があるとなお好き。ジャンプラを中心に読み漁っています。<br>
+                      特に好きなのはダンダダン、推しの子、ココロのプログラム。特に最後のは掲載誌間違えてるんじゃないかと思うほど心理描写が緻密なラブコメです。おすすめ。</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button class="acc-header">
+                    音楽
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p>こちらも雑多にはなりますが、濃いのは失恋ソングと邦ロック、ボカロですかね。Indigo la End、裏芽、澤田空海理あたりはおそらく毎日耳にしています。<br>
+                      あとはSpotifyのおすすめの曲で少しづつ聴くアーティストが広がってきています。</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button class="acc-header">
+                    機械
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p>雑な見出しで申し訳ないですが、PCスマホオーディオ等かなりハマっています。ポタオデに関してはCIEMを自作したことがあるといえば雰囲気掴んでいただけるでしょうか。<br>
+                      気が向けばブログなんかで持っているものについて雑記を書くのもいいかもしれないですね。</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acc-item">
+                  <button class="acc-header">
+                    百合
+                    <span class="acc-icon"></span>
+                  </button>
+                  <div class="acc-panel">
+                    <div class="acc-panel-inner">
+                      <p>説明不要。</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-
             </div>
-    </section>
 
-    <!-- <section>
-      <h2>１カラムにすることもできます</h2>
-      <p>注意書きなどを１カラムにすることもできます。お好みでどうぞ。<br>
-      文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。文章みほん。</p>
-    </section> -->
+            <!-- 苦手 -->
+            <div class="tab-panel" id="tab-dislike">
+              <p>ガチグロがだめです。リアルな虫とかそれ以上は無理……。当然TRPG中は頑張ります。</p>
+            </div>
 
-    <section>
-      <h2>アバターまとめ１</h2>
-      <p class="center">順次更新するつもりです。</p>
+          </div>
+        </div>
+      </section>
 
-      <ul class="cs">
-        <li><a href="img/01.jpg">
-          <img src="img/01.jpg" alt="アバター" />
-          <div class="text">
-            <p class="name">桔梗</p>
-            <p>KP05 / DROPDEAD</p>
-          </div>
-        </a></li>
-        <li><a href="img/02.jpg">
-          <img src="img/02.jpg" alt="アバター" />
-          <div class="text">
-            <p class="name">狐雨</p>
-            <p>Niar / pullover</p>
-          </div>
-        </a></li>
-        <li><a href="img/03.jpg">
-          <img src="img/03.jpg" alt="アバター" />
-          <div class="text">
-            <p class="name">ミルク</p>
-            <p>MP05 / Cardigan</p>
-          </div>
-        </a></li>
-        <li><a href="img/04.jpg">
-          <img src="img/04.jpg" alt="アバター" />
-          <div class="text">
-            <p class="name">Shiki</p>
-            <p>ワンオフ / @yurika_011</p>
-          </div>
-        </a></li>
-        <li><a href="img/05.jpg">
-          <img src="img/05.jpg" alt="アバター" />
-          <div class="text">
-            <p class="name">森羅</p>
-            <p>Taddy Bear Hair / Tender_Love</p>
-          </div>
-        </a></li>
-      </ul>
+      <!-- ==== 生息場所 ==== -->
+      <section class="page-section" id="page-habitat">
+        <h2>生息場所</h2>
+        <p>
+        Twitterなんかは長年やっているくせに運用方針も定まっておらずアホみたいに雑多、人間のようななにかがそのままそこに存在してます。ほんとはもちっと整理したい……すまない……
+        </p>
+        <p>VRCではフレプラを中心にkawaiiになるべく日々改変中。<br>
+        黒髪ボブが好きすぎて一年間続けていたんですが、最近ゆるふわカーブなベージュボブも使ってみています。短髪、ごちゃごちゃしすぎないシンプルなスタイル、リアルクローズ系とか好きです。<br>
+        おしゃべりするの好きなので、色々趣味など共有しましょう。
+        </p>
+        <p>
+        Misskeyは今のところそんなに使ってません。友人の鯖に垢置かせてもらってます。
+        </p>
 
-    </section>
+        <div class="box">
+          下部にはVRCで普段使うアバターを順次軽くリストアップしておきます。全部わたしです。あと、たまにボイチェン使って入ります。VRCで知らない人来たと勘違いさせちゃったらごめんね
+        </div>
+      </section>
 
-    <!-- <section>
-      <h2>アバターまとめ２</h2>
+      <!-- ==== アバターまとめ ==== -->
+      <section class="page-section" id="page-avatars">
+        <h2>アバターまとめ１</h2>
+        <p class="center">順次更新するつもりです。</p>
 
-      <ul class="cs">
-        <li><a href="#">
-          <img src="img/01.jpg" alt="アバター">
-          <div class="text">
-            <p class="name">おなまえ</p>
-            <p>〇〇企画 / ××所属</p>
-          </div>
-        </a></li>
-        <li><a href="#">
-          <img src="img/02.jpg" alt="アバター">
-          <div class="text">
-            <p class="name">おなまえ</p>
-            <p>〇〇企画 / ××所属</p>
-          </div>
-        </a></li>
-        <li><a href="#">
-          <img src="img/03.jpg" alt="アバター">
-          <div class="text">
-            <p class="name">おなまえ</p>
-            <p>〇〇企画 / ××所属</p>
-          </div>
-        </a></li>
-        <li><a href="#">
-          <img src="img/01.jpg" alt="アバター">
-          <div class="text">
-            <p class="name">おなまえ</p>
-            <p>〇〇企画 / ××所属</p>
-          </div>
-        </a></li>
-        <li><a href="#">
-          <img src="img/02.jpg" alt="アバター">
-          <div class="text">
-            <p class="name">おなまえ</p>
-            <p>〇〇企画 / ××所属</p>
-          </div>
-        </a></li>
-      </ul> -->
+        <ul class="cs">
+          <li><a href="img/01.jpg">
+            <img src="img/01.jpg" alt="アバター" />
+            <div class="text">
+              <p class="name">桔梗</p>
+              <p>KP05 / DROPDEAD</p>
+            </div>
+          </a></li>
+          <li><a href="img/02.jpg">
+            <img src="img/02.jpg" alt="アバター" />
+            <div class="text">
+              <p class="name">狐雨</p>
+              <p>Niar / pullover</p>
+            </div>
+          </a></li>
+          <li><a href="img/03.jpg">
+            <img src="img/03.jpg" alt="アバター" />
+            <div class="text">
+              <p class="name">ミルク</p>
+              <p>MP05 / Cardigan</p>
+            </div>
+          </a></li>
+          <li><a href="img/04.jpg">
+            <img src="img/04.jpg" alt="アバター" />
+            <div class="text">
+              <p class="name">Shiki</p>
+              <p>ワンオフ / @yurika_011</p>
+            </div>
+          </a></li>
+          <li><a href="img/05.jpg">
+            <img src="img/05.jpg" alt="アバター" />
+            <div class="text">
+              <p class="name">森羅</p>
+              <p>Taddy Bear Hair / Tender_Love</p>
+            </div>
+          </a></li>
+        </ul>
+      </section>
 
-    </section>
-  </div>
+      <!-- ==== 注意事項 ==== -->
+      <section class="page-section" id="page-caution">
+        <h2>注意事項</h2>
+        <p>一応、重度の精神疾患持ちです。主に恐怖や怯えが強いというだけですが、そういう傾向があるということで……</p>
+      </section>
+
+    </div>
   </main>
 
   <footer>
@@ -226,6 +287,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -58,6 +58,8 @@ body {
   color: #333333;
   font-size: 16px;
   line-height: 1.6;
+  padding-top: 56px;
+  /* ↑固定ヘッダー分の余白 */
 }
 
 a {
@@ -438,4 +440,376 @@ footer .bottom a {
   padding: 5px 10px;
   margin: 0 0 0 auto;
   display: block;
+}
+
+/* ==========================================
+   スクロール追従ヘッダー＋ハンバーガーメニュー
+   ========================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-bottom: 1px solid #f5d0da;
+  z-index: 1000;
+}
+
+.site-header-inner {
+  max-width: 1140px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.site-logo {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: "Kosugi Maru", sans-serif;
+  color: #da2b5c;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 24px;
+  background: #da2b5c;
+  left: 4px;
+  border-radius: 2px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.hamburger span:nth-child(1) { top: 10px; }
+.hamburger span:nth-child(2) { top: 16px; }
+.hamburger span:nth-child(3) { top: 22px; }
+
+.hamburger.open span:nth-child(1) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(51, 51, 51, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  z-index: 998;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 260px;
+  max-width: 80%;
+  height: 100%;
+  background: #fff5f7;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  padding-top: 72px;
+  -webkit-transition: right 0.35s ease;
+  transition: right 0.35s ease;
+}
+
+.slide-menu.open {
+  right: 0;
+}
+
+.slide-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.slide-menu li {
+  border-bottom: 1px dotted #e6c3cc;
+}
+
+.slide-menu button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 18px 28px;
+  font-size: 15px;
+  color: #65676d;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.slide-menu button:hover {
+  background: #ffe8eb;
+  color: #da2b5c;
+}
+
+.slide-menu button.active {
+  background: #ffe8eb;
+  color: #da2b5c;
+  font-weight: bold;
+  -webkit-box-shadow: inset 4px 0 0 #da2b5c;
+          box-shadow: inset 4px 0 0 #da2b5c;
+}
+
+/* ==========================================
+   ページ切り替え（初期ページ／各メニュー先）
+   ========================================== */
+
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+  -webkit-animation: pageFadeIn 0.35s ease;
+          animation: pageFadeIn 0.35s ease;
+}
+
+@-webkit-keyframes pageFadeIn {
+  from { opacity: 0; -webkit-transform: translateY(8px); transform: translateY(8px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; -webkit-transform: translateY(8px); transform: translateY(8px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+#page-intro .header {
+  margin-top: -1px;
+}
+
+.intro-hint {
+  font-size: 13px;
+  color: #bcbcbc;
+  margin-top: 30px;
+}
+
+/* ==========================================
+   プロフィール タブ＋アコーディオン
+   （趣味趣向について：好み／苦手の2タブ、
+   　好みタブの中身をアコーディオンにする）
+   ========================================== */
+
+.profile-tabs {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #f0dde1;
+}
+
+.tab-nav {
+  display: -webkit-box;
+  display: flex;
+  border-bottom: 1px dotted #e6c3cc;
+  background: #fff5f7;
+}
+
+.tab-btn {
+  -webkit-box-flex: 1;
+          flex: 1;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 14px 8px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #a9788b;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.tab-btn:hover {
+  color: #da2b5c;
+}
+
+.tab-btn.active {
+  color: #da2b5c;
+  border-bottom-color: #da2b5c;
+  background: #ffffff;
+}
+
+.tab-content-wrap {
+  padding: 20px;
+}
+
+.tab-panel {
+  display: none;
+  -webkit-animation: tabFadeIn 0.3s ease;
+          animation: tabFadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@-webkit-keyframes tabFadeIn {
+  from { opacity: 0; -webkit-transform: translateY(6px); transform: translateY(6px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; -webkit-transform: translateY(6px); transform: translateY(6px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+.tab-panel p {
+  margin: 0;
+}
+
+/* アコーディオン（好みタブの中身） */
+
+.accordion {
+  border-top: 1px dotted #d0d0d0;
+}
+
+.acc-item {
+  border-bottom: 1px dotted #d0d0d0;
+}
+
+.acc-header {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 14px 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #da2b5c;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.acc-header:hover {
+  color: lightpink;
+}
+
+.acc-icon {
+  -webkit-box-flex: 0;
+          flex-shrink: 0;
+  margin-left: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #da2b5c;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.acc-icon::before,
+.acc-icon::after {
+  content: "";
+  position: absolute;
+  background: #da2b5c;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.acc-icon::before {
+  width: 8px;
+  height: 2px;
+}
+
+.acc-icon::after {
+  width: 2px;
+  height: 8px;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.acc-item.open .acc-header .acc-icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.acc-item.open .acc-header .acc-icon::after {
+  opacity: 0;
+}
+
+.acc-panel {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.35s ease;
+  transition: max-height 0.35s ease;
+}
+
+.acc-panel-inner {
+  padding: 0 4px 16px 1em;
+  border-left: 1px dotted #d0d0d0;
+  margin-left: 0.2em;
+}
+
+.acc-panel-inner p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 767px) {
+  .tab-btn {
+    font-size: 13px;
+    padding: 12px 4px;
+  }
+  .tab-content-wrap {
+    padding: 16px 12px;
+  }
 }
